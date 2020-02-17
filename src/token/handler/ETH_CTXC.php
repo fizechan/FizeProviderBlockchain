@@ -1,14 +1,14 @@
 <?php
-/**
- * 基于ETH的EOS
- */
+
 namespace fize\provider\blockchain\token\handler;
 
 use fize\provider\blockchain\token\ERC20;
 
+/**
+ * 基于ETH的CTXC
+ */
 class ETH_CTXC extends ERC20
 {
-    const CONTRACT_ADDRESS = '0xea11755ae41d889ceec39a63e6ff75a02bc1c00d';
 
     /**
      * 获取合约地址
@@ -16,6 +16,6 @@ class ETH_CTXC extends ERC20
      */
     protected function getContractAddress()
     {
-        return self::CONTRACT_ADDRESS;
+        return '0xea11755ae41d889ceec39a63e6ff75a02bc1c00d';
     }
 }

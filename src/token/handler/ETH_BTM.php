@@ -1,14 +1,14 @@
 <?php
-/**
- * 基于ETH的EOS
- */
+
 namespace fize\provider\blockchain\token\handler;
 
 use fize\provider\blockchain\token\ERC20;
 
+/**
+ * 基于ETH的BTM
+ */
 class ETH_BTM extends ERC20
 {
-    const CONTRACT_ADDRESS = '0xcb97e65f07da24d46bcdd078ebebd7c6e6e3d750';
 
     /**
      * 获取合约地址
@@ -16,6 +16,6 @@ class ETH_BTM extends ERC20
      */
     protected function getContractAddress()
     {
-        return self::CONTRACT_ADDRESS;
+        return '0xcb97e65f07da24d46bcdd078ebebd7c6e6e3d750';
     }
 }

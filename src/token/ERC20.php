@@ -1,17 +1,17 @@
 <?php
+
+namespace fize\provider\blockchain\token;
+
+use Exception;
+use Web3\Web3;
+use kornrunner\Keccak;
+use fize\math\Bc;
+
 /**
  * 基于ETH的ERC20标准TOKEN
  * ABI编译规则请在如下URL查看
  * @see https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI
  */
-
-namespace fize\provider\blockchain\token;
-
-use Web3\Web3;
-use kornrunner\Keccak;
-use fize\math\Bc;
-use Exception;
-
 abstract class ERC20 implements TokenHandler
 {
     /**
@@ -279,78 +279,5 @@ abstract class ERC20 implements TokenHandler
         }
         //var_dump($all_params);
         return implode('', $all_params);
-    }
-
-    /**
-     * 测试用，待删除
-     * @throws Exception
-     */
-    public function test()
-    {
-        $account = '299432642dcc4c2f33ff0f5d41b8f4154b82ae2a';
-        $full_account = $this->padLeft($account, 64);
-//        echo $full_account;
-//
-//        echo "\r\n";
-//        echo "<br/><br/>";
-
-        $address = '0x299432642dcc4c2f33ff0f5d41b8f4154b82ae2a';
-        $shotr_address = $this->addressLongToShort($address);
-//        echo $shotr_address;
-//
-//        echo "\r\n";
-//        echo "<br/><br/>";
-
-        $amount = 1000;
-        $hex = $this->dechex18($amount);
-//        echo $hex;
-//
-//        echo "\r\n";
-//        echo "<br/><br/>";
-
-        $amount = $this->padLeft(base_convert('100000000', 10, 16), 64);
-//        echo $amount;
-//
-//        echo "\r\n";
-//        echo "<br/><br/>";
-
-        $params = [
-            ['uint256', '100000000'],
-            ['string', 'Yes Test QQ'],
-            ['string', 'QQ']
-        ];
-//        $abi_code1 = $this->abiEncode($params);
-//        echo $abi_code1;
-//
-//        echo "\r\n";
-//        echo "<br/><br/>";
-
-        $abi_code2 = $this->abiEncode([], 'sam(bytes,bool,uint256[])');
-        echo $abi_code2;
-
-        echo "\r\n";
-        echo "<br/><br/>";
-
-        $params3 = [
-            ['address', '0x04E4D929c65182bB6879E66039F91EC03389579d'],
-            ['uint', '1000']
-        ];
-        //$abi_code3 = $this->abiEncode([], 'transfer(address,uint)');
-        $abi_code3 = $this->abiEncode($params3, "transfer(address,uint256)");
-        echo $abi_code3;
-
-        echo "\r\n";
-        echo "<br/><br/>";
-
-        $params4 = [
-            ['uint', '1000000000000000000']
-        ];
-        $abi_code4 = $this->abiEncode($params4);
-        echo $abi_code4;
-
-        echo "\r\n";
-        echo "<br/><br/>";
-        $abi_code0 = '0xa9059cbb00000000000000000000000004e4d929c65182bb6879e66039f91ec03389579d00000000000000000000000000000000000000000000000000000000000003e8';
-        echo $abi_code0;
     }
 }

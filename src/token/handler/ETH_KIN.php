@@ -1,14 +1,14 @@
 <?php
-/**
- * 基于ETH的EOS
- */
+
 namespace fize\provider\blockchain\token\handler;
 
 use fize\provider\blockchain\token\ERC20;
 
+/**
+ * 基于ETH的KIN
+ */
 class ETH_KIN extends ERC20
 {
-    const CONTRACT_ADDRESS = '0x818fc6c2ec5986bc6e2cbf00939d90556ab12ce5';
 
     /**
      * 获取合约地址
@@ -16,6 +16,6 @@ class ETH_KIN extends ERC20
      */
     protected function getContractAddress()
     {
-        return self::CONTRACT_ADDRESS;
+        return '0x818fc6c2ec5986bc6e2cbf00939d90556ab12ce5';
     }
 }

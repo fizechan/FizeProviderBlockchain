@@ -1,8 +1,9 @@
 <?php
 namespace fize\provider\blockchain\token\handler;
 
-use fize\provider\blockchain\token\TokenHandler;
 use Bitcoin;
+use fize\provider\blockchain\token\TokenHandler;
+
 
 class BTC implements TokenHandler
 {
@@ -127,8 +128,7 @@ class BTC implements TokenHandler
      */
     public function getTransaction($hash)
     {
-        $result = $this->coin->gettransaction($hash);
-        return $result;
+        return $this->coin->gettransaction($hash);
     }
 
     /**
@@ -138,8 +138,7 @@ class BTC implements TokenHandler
      */
     public function listTransactions($account)
     {
-        $result = $this->coin->listtransactions($account);
-        return $result;
+        return $this->coin->listtransactions($account);
     }
 
 }

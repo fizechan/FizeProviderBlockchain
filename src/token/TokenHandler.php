@@ -1,10 +1,10 @@
 <?php
-/**
- * 所有token需要支持的接口
- */
 
 namespace fize\provider\blockchain\token;
 
+/**
+ * 所有token需要支持的接口
+ */
 interface TokenHandler
 {
     /**

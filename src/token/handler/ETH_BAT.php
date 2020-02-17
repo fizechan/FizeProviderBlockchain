@@ -1,14 +1,14 @@
 <?php
-/**
- * 基于ETH的EOS
- */
+
 namespace fize\provider\blockchain\token\handler;
 
 use fize\provider\blockchain\token\ERC20;
 
+/**
+ * 基于ETH的BAT
+ */
 class ETH_BAT extends ERC20
 {
-    const CONTRACT_ADDRESS = '0x0d8775f648430679a709e98d2b0cb6250d2887ef';
 
     /**
      * 获取合约地址
@@ -16,6 +16,6 @@ class ETH_BAT extends ERC20
      */
     protected function getContractAddress()
     {
-        return self::CONTRACT_ADDRESS;
+        return '0x0d8775f648430679a709e98d2b0cb6250d2887ef';
     }
 }

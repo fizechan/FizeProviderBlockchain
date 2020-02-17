@@ -1,13 +1,13 @@
 <?php
-/**
- * ETH公有链
- */
+
 namespace fize\provider\blockchain\token\handler;
 
 use fize\provider\blockchain\token\TokenHandler;
 use Web3\Web3;
 
-
+/**
+ * ETH公有链
+ */
 class ETH implements TokenHandler
 {
 
