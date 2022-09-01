@@ -7,22 +7,22 @@
   ],
   "autoload": {
     "psr-4": {
-      "fize\\provider\\blockchain\\": "src"
+      "Fize\\Provider\\Blockchain\\": "src"
     }
   },
   "description": "区块链应用",
   "license": "MIT",
   "name": "fize/provider-blockchain",
   "require": {
-    "php": ">=5.4.0",
-    "fize/net": "~4.2.0",
-    "fize/crypt": "~3.2.0",
-    "fize/math": "~2.1.0",
-    "sc0vu/web3.php": "~0.1",
-    "kornrunner/keccak": "~1.0",
-    "ccxt/ccxt": "~1.22"
+    "php": ">=7.1.0",
+    "ccxt/ccxt": "^1.22.0",
+    "fize/codec": "^5.0.0",
+    "fize/math": "^4.0.0",
+    "fize/net": "^5.0.0",
+    "kornrunner/keccak": "^1.0.0",
+    "sc0vu/web3.php": "^0.1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~9.2.6"
+    "phpunit/phpunit": "^9.2.6"
   }
 }
