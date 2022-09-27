@@ -14,7 +14,7 @@ class ICX extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xb5a5f22694352c15b00323844ad545abb2b11028';
     }

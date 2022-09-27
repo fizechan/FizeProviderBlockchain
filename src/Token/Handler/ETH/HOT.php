@@ -14,7 +14,7 @@ class HOT extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x6c6ee5e31d828de241282b9606c8e98ea48526e2';
     }

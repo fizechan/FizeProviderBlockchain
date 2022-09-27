@@ -14,7 +14,7 @@ class SUB extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x12480e24eb5bec1a9d4369cab6a80cad3c0a377a';
     }

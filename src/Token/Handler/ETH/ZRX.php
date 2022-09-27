@@ -14,7 +14,7 @@ class ZRX extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xe41d2489571d322189246dafa5ebde1f4699f498';
     }

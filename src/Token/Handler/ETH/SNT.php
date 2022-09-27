@@ -14,7 +14,7 @@ class SNT extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x744d70fdbe2ba4cf95131626614a1763df805b9e';
     }

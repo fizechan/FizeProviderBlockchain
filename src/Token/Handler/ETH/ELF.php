@@ -14,7 +14,7 @@ class ELF extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xbf2179859fc6d5bee9bf9158632dc51678a4100e';
     }

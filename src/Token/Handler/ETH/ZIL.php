@@ -14,7 +14,7 @@ class ZIL extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x05f4a42e251f2d52b8ed15e9fedaacfcef1fad27';
     }

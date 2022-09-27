@@ -14,7 +14,7 @@ class LOOM extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xa4e8c3ec456107ea67d3075bf9e3df3a75823db0';
     }

@@ -14,7 +14,7 @@ class DRGN extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x419c4db4b9e25d6db2ad9691ccb832c8d9fda05e';
     }

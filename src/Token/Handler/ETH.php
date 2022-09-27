@@ -34,7 +34,7 @@ class ETH implements TokenHandler
      * @param string $private_key 账户私钥
      * @return string 账户地址
      */
-    public function newAccount($private_key)
+    public function newAccount(string $private_key)
     {
         $account = null;
         $this->web3->personal->newAccount($private_key, function ($err, $data) use (&$account){
@@ -51,7 +51,7 @@ class ETH implements TokenHandler
      * @param string $account 账户地址
      * @return string 返回大数据字符串
      */
-    public function getBalance($account)
+    public function getBalance(string $account)
     {
         $balance = null;
         $this->web3->eth->getBalance($account, function ($err, $data) use (&$balance){
@@ -65,12 +65,12 @@ class ETH implements TokenHandler
 
     /**
      * 交易
-     * @param string $from 付款账户
-     * @param string $to 接收账户
-     * @param int $value 交易量
+     * @param string $from  付款账户
+     * @param string $to    接收账户
+     * @param int    $value 交易量
      * @return string 交易记录地址
      */
-    public function sendTransaction($from, $to, $value)
+    public function sendTransaction(string $from, string $to, $value)
     {
         //todo 需要$from的密钥，考虑保存到DB
         $password = 'daowomima-42';
@@ -127,7 +127,7 @@ class ETH implements TokenHandler
      * @param string $hash 交易哈希值
      * @return array
      */
-    public function getTransaction($hash)
+    public function getTransaction(string $hash)
     {
         $result = [];
         $this->web3->eth->getTransactionByHash($hash, function($err, $data) use (&$result){

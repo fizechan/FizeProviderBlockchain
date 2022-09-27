@@ -14,7 +14,7 @@ class BAT extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x0d8775f648430679a709e98d2b0cb6250d2887ef';
     }

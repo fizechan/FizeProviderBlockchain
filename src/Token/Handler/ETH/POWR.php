@@ -14,7 +14,7 @@ class POWR extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x595832f8fc6bf59c85c527fec3740a1b7a361269';
     }

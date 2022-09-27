@@ -14,7 +14,7 @@ class POLY extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x9992ec3cf6a55b00978cddf2b27bc6882d88d1ec';
     }

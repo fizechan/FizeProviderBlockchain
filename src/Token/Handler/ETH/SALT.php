@@ -14,7 +14,7 @@ class SALT extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0x4156D3342D5c385a87D264F90653733592000581';
     }

@@ -14,7 +14,7 @@ class WTC extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xb7cb1c96db6b22b0d3d9536e0108d062bd488f74';
     }

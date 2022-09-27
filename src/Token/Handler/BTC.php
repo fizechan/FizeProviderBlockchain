@@ -51,7 +51,7 @@ class BTC implements TokenHandler
      * @param string $private_key 账户私钥
      * @return string 账户地址
      */
-    public function newAccount($private_key)
+    public function newAccount(string $private_key): string
     {
         $this->unlock();
         $result = $this->coin->getnewaddress('for_rpc1');
@@ -64,7 +64,7 @@ class BTC implements TokenHandler
      * @param string $account 账户地址
      * @return string 返回大数据字符串
      */
-    public function getBalance($account)
+    public function getBalance(string $account): string
     {
         $this->unlock();
         $balance = $this->coin->getbalance($account);
@@ -74,12 +74,12 @@ class BTC implements TokenHandler
 
     /**
      * 交易
-     * @param string $from 付款账户
-     * @param string $to 接收账户
-     * @param mixed $value 交易量
+     * @param string $from  付款账户
+     * @param string $to    接收账户
+     * @param mixed  $value 交易量
      * @return string 交易记录地址
      */
-    public function sendTransaction($from, $to, $value)
+    public function sendTransaction(string $from, string $to, $value): string
     {
         $this->unlock();
 
@@ -108,7 +108,7 @@ class BTC implements TokenHandler
      * 返回所有账户
      * @return array
      */
-    public function accounts()
+    public function accounts(): array
     {
         $accounts = $this->coin->listaccounts(1, true);
         //return $accounts;
@@ -126,7 +126,7 @@ class BTC implements TokenHandler
      * @param string $hash 交易哈希值
      * @return array
      */
-    public function getTransaction($hash)
+    public function getTransaction(string $hash): array
     {
         return $this->coin->gettransaction($hash);
     }
@@ -136,7 +136,7 @@ class BTC implements TokenHandler
      * @param $account
      * @return array
      */
-    public function listTransactions($account)
+    public function listTransactions($account): array
     {
         return $this->coin->listtransactions($account);
     }

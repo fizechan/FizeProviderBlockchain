@@ -4,8 +4,8 @@ namespace Fize\Provider\Blockchain\Token;
 
 use Exception;
 use Fize\Math\BC;
-use Web3\Web3;
 use kornrunner\Keccak;
+use Web3\Web3;
 
 /**
  * 基于ETH的ERC20标准TOKEN
@@ -38,28 +38,28 @@ abstract class ERC20 implements TokenHandler
      * 获取合约地址
      * @return string
      */
-    abstract protected function getContractAddress();
+    abstract protected function getContractAddress(): string;
 
     /**
      * 字符串左补齐
-     * @param string $str 待补零字符串
-     * @param int $digit 需补齐到该位数
+     * @param string $str         待补零字符串
+     * @param int    $digit       需补齐到该位数
      * @param string $placeholder 使用的补齐字符，默认为0
      * @return string
      */
-    private function padLeft($str, $digit, $placeholder = "0")
+    private function padLeft(string $str, int $digit, string $placeholder = "0"): string
     {
         return sprintf("%{$placeholder}{$digit}s", $str);
     }
 
     /**
      * 字符串右补齐
-     * @param string $str 待补零字符串
-     * @param int $digit 需补齐到该位数
+     * @param string $str         待补零字符串
+     * @param int    $digit       需补齐到该位数
      * @param string $placeholder 使用的补齐字符，默认为0
      * @return string
      */
-    private function padRight($str, $digit, $placeholder = "0")
+    private function padRight(string $str, int $digit, string $placeholder = "0"): string
     {
         return sprintf("%-{$placeholder}{$digit}s", $str);
     }
@@ -69,7 +69,7 @@ abstract class ERC20 implements TokenHandler
      * @param $address
      * @return string
      */
-    private function addressLongToShort($address)
+    private function addressLongToShort($address): string
     {
         return substr($address, 2);
     }
@@ -79,7 +79,7 @@ abstract class ERC20 implements TokenHandler
      * @param $amount
      * @return string
      */
-    private function dechex18($amount)
+    private function dechex18($amount): string
     {
         //不能使用dechex，因为dechex精度大小不够
         //return dechex(bcmul((string)$amount, '1000000000000000000'));
@@ -87,11 +87,11 @@ abstract class ERC20 implements TokenHandler
     }
 
     /**
-     * @todo ETH是否支持分组？
      * @param string $private_key 账户私钥
      * @return string 账户地址
+     *@todo ETH是否支持分组？
      */
-    public function newAccount($private_key)
+    public function newAccount(string $private_key): string
     {
         $account = null;
         $this->web3->personal->newAccount($private_key, function ($err, $data) use (&$account) {
@@ -108,7 +108,7 @@ abstract class ERC20 implements TokenHandler
      * @param string $account 账户地址
      * @return string 大数据字符串
      */
-    public function getBalance($account)
+    public function getBalance(string $account): string
     {
         $this->web3->batch(true);  //准备批处理
 
@@ -141,12 +141,12 @@ abstract class ERC20 implements TokenHandler
 
     /**
      * 交易
-     * @param string $from 付款账户
-     * @param string $to 接收账户
-     * @param mixed $value 交易量
+     * @param string $from  付款账户
+     * @param string $to    接收账户
+     * @param mixed  $value 交易量
      * @return string 交易记录地址
      */
-    public function sendTransaction($from, $to, $value)
+    public function sendTransaction(string $from, string $to, $value): string
     {
         $this->web3->batch(true);  //准备批处理
 
@@ -190,7 +190,7 @@ abstract class ERC20 implements TokenHandler
      * @todo ETH是否支持分组？
      * @return array
      */
-    public function accounts()
+    public function accounts(): array
     {
         $accounts = [];
         $this->web3->eth->accounts(function ($err, $data) use (&$accounts) {
@@ -204,27 +204,27 @@ abstract class ERC20 implements TokenHandler
 
     /**
      * 获取交易记录
-     * @todo 当前API无法提供，请外部实现记录
      * @param string $hash 交易哈希值
      * @return array
+     *@todo 当前API无法提供，请外部实现记录
      */
-    public function getTransaction($hash)
+    public function getTransaction(string $hash): array
     {
         return [];
     }
 
     /**
      * 对提供的参数和函数名进行ABI编码
-     * @param array $params 型如[[$type, $value], ...]的数组
-     * @param string $fun 提供的函数签名，默认无
+     * @param array       $params 型如[[$type, $value], ...]的数组
+     * @param string|null $fun    提供的函数签名，默认无
      * @return string
      */
-    private function abiEncode(array $params, $fun = null)
+    private function abiEncode(array $params, string $fun = null): string
     {
         $placeholders = [];
         $extenders = [];
         $count_params = count($params);
-        foreach ($params as list($type, $value)) {
+        foreach ($params as [$type, $value]) {
             switch ($type) {
                 case 'address':
                     //地址类型

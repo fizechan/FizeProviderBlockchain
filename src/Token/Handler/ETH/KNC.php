@@ -14,7 +14,7 @@ class KNC extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xdd974d5c2e2928dea5f71b9825b8b646686bd200';
     }

@@ -14,7 +14,7 @@ class ENG extends ERC20
      * 获取合约地址
      * @return string
      */
-    protected function getContractAddress()
+    protected function getContractAddress(): string
     {
         return '0xf0ee6b27b759c9893ce4f094b49ad28fd15a23e4';
     }
